@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI Project SY 2025-2026</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: cornsilk;
+    }
+
+    header {
+      background-color: turquoise;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fff;
+      border-bottom: 2px solid #ddd;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+    }
+
+    nav button:hover, nav button.active {
+      border-bottom: 3px solid teal;
+      color: maroon;
+      font-weight: bold;
+    }
+
+    .container {
+  width: 350px;
+  margin: auto;
+  padding: 20px;
+  background: cornsilk;
+
+  display: flex;
+  flex-wrap: wrap;     /* allow wrapping to next row */
+  gap: 20px;
+    }
+
+    .product {
+  width: calc(50% - 10px);  /* two boxes per row */
+  background: skyblue;
+  padding:20px;
+  text-align: center;
+  font-size: 20px;
+  box-sizing: border-box;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      color: teal;
+      font-size: 14px;
+    }
+
+    .product button {
+      background-color: teal;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+      width:60%;
+    }
+
+    .product button:hover {
+      background-color: #e65c00;
+    }
+
+
+
+  </style>
+</head>
+<body>
+
+
+  <header>ARAL - READING </header>
+
+  <nav>
+    <button class="tab active" data-tab="home" style="color:teal;">MENU</button>
+  </nav>
+
+  <!-- Home Supplies -->
+
+  <div class="container" >
+
+
+    <div class="product">
+	<p><b>Pronunciation Drill</b></p>
+      <img src="Slide1.JPG" alt="Home Item">
+      <a href="pronun.html"><button> Open </button></a>
+    </div>
+
+    <div class="product">
+	<p><b>Sentence Formation Drill</b></p>
+      <img src="Slide2.JPG" alt="Home Item">
+      <a href="sentence.html"><button> Open </button></a>
+    </div>
+
+    <div class="product">
+	<p><b>Reading Selection</b></p>
+      <img src="Slide3.JPG" alt="Home Item">
+      <a href="story.html"><button> Open </button></a>
+    </div>
+
+    <div class="product">
+	<p><b>Comprehension</b></p>
+      <img src="Slide4.JPG" alt="Home Item">
+      <a href="compre.html"><button> Open </button></a>
+    </div>
+
+    <div class="product">
+	<p><b>Other Drill</b></p>
+      <img src="Slide5.JPG" alt="Home Item">
+      <a href="other.html"><button> Open </button></a>
+    </div>
+
+
+
+  </div>
+
+
+ 
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const containers = document.querySelectorAll('.container');
+    const popup = document.getElementById('sharePopup');
+    const overlay = document.getElementById('overlay');
+    const shareImg = document.getElementById('shareImage');
+    const shareLink = document.getElementById('shareLink');
+
+    // Tab switching
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        tab.classList.add('active');
+        containers.forEach(section => {
+          section.classList.remove('active');
+          if (section.id === tab.dataset.tab) {
+            section.classList.add('active');
+          }
+        });
+      });
+    });
+
+
+
+
+  </script>
+
+</body>
+</html>
+
